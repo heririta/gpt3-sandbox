@@ -6,7 +6,7 @@ Note that this repository is not under any active development; just basic mainte
 
 ## Description
 
-The goal of this project is to enable users to create cool web demos using the newly released OpenAI GPT-3 API **with just a few lines of Python.** 
+The goal of this project is to enable users to create cool web demos using the newly released OpenAI GPT-3 API **with just a few lines of Python.**
 
 This project addresses the following issues:
 
@@ -50,10 +50,10 @@ This [developer toolkit](https://www.notion.so/API-Developer-Toolkit-49595ed6ffc
 
 Coding-wise, you only need Python. But for the app to run, you will need:
 
-* API key from the OpenAI API beta invite
-* Python 3
-* `yarn`
-* Node 16
+- API key from the OpenAI API beta invite
+- Python 3
+- `yarn`
+- Node 16
 
 Instructions to install Python 3 are [here](https://realpython.com/installing-python/), instructions to install `yarn` are [here](https://classic.yarnpkg.com/en/docs/install/#mac-stable) and we recommend using nvm to install (and manage) Node (instructions are [here](https://github.com/nvm-sh/nvm)).
 
@@ -80,7 +80,7 @@ To create your own example, check out the ["getting started" docs](https://githu
 
 ## Interactive Priming
 
-The real power of GPT-3 is in its ability to learn to specialize to tasks given a few examples. However, priming can at times be more of an art than a science. Using the GPT and Example classes, you can easily experiment with different priming examples and immediately see their GPT on GPT-3's performance. Below is an example showing it improve incrementally at translating English to LaTeX as we feed it more examples in the python interpreter: 
+The real power of GPT-3 is in its ability to learn to specialize to tasks given a few examples. However, priming can at times be more of an art than a science. Using the GPT and Example classes, you can easily experiment with different priming examples and immediately see their GPT on GPT-3's performance. Below is an example showing it improve incrementally at translating English to LaTeX as we feed it more examples in the python interpreter:
 
 ```
 >>> from api import GPT, Example, set_openai_key
@@ -98,22 +98,22 @@ output:
 >>> print(gpt.get_top_reply(prompt))
 output: \int_a^b f(x) dx
 
-``` 
+```
 
 ## Contributions
 
 We actively encourage people to contribute by adding their own examples or even adding functionalities to the modules. Please make a pull request if you would like to add something, or create an issue if you have a question. We will update the contributors list on a regular basis.
 
-Please *do not* leave your secret key in plaintext in your pull request!
+Please _do not_ leave your secret key in plaintext in your pull request!
 
 ## Authors
 
 The following authors have committed 20 lines or more (ordered according to the Github contributors page):
 
-* Shreya Shankar
-* Bora Uyumazturk
-* Devin Stein
-* Gulan
-* Michael Lavelle
+- Shreya Shankar
+- Bora Uyumazturk
+- Devin Stein
+- Gulan
+- Michael Lavelle
 
-
+https://stackoverflow.com/questions/73193119/python-filenotfounderror-winerror-2-the-system-cannot-find-the-file-specifie

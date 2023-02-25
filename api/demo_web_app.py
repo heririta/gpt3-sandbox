@@ -1,25 +1,28 @@
 """Runs the web app given a GPT object and UI configuration."""
-
-from http import HTTPStatus
-import json
-import subprocess
-import openai
-
-from flask import Flask, request, Response
-
-from .gpt import set_openai_key, Example
 from .ui_config import UIConfig
+from .gpt import set_openai_key, Example
+from flask import Flask, request, Response
+import openai
+import subprocess
+import json
+from http import HTTPStatus
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 
 CONFIG_VAR = "OPENAI_CONFIG"
-KEY_NAME = "OPENAI_KEY"
+# KEY_NAME = "OPENAI_KEY"
+KEY_NAME = os.getenv('OPENAI_KEY')
 
 
 def demo_web_app(gpt, config=UIConfig()):
     """Creates Flask app to serve the React app."""
     app = Flask(__name__)
 
-    app.config.from_envvar(CONFIG_VAR)
-    set_openai_key(app.config[KEY_NAME])
+    # app.config.from_envvar(CONFIG_VAR)
+    # set_openai_key(app.config[KEY_NAME])
+    set_openai_key(KEY_NAME)
 
     @app.route("/params", methods=["GET"])
     def get_params():
@@ -105,5 +108,6 @@ def demo_web_app(gpt, config=UIConfig()):
             offset = len(gpt.output_prefix)
         return {'text': response['choices'][0]['text'][offset:]}
 
-    subprocess.Popen(["yarn", "start"])
+    # subprocess.Popen(["yarn", "start"])
+    subprocess.Popen(["yarn", "start"], shell=True)
     app.run()
